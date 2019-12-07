@@ -13,9 +13,5 @@
   </Target>
   <ItemGroup>
     <DotNetCliToolReference Include="BundlerMinifier.Core" Version="3.2.435" />
-<<<<<<< HEAD
   </ItemGroup> -->
-=======
-  </ItemGroup>
->>>>>>> 43479b8f5b7817381a73bf7f6803210fcb5cb15e
 </Project>
