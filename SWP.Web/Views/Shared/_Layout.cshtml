@@ -11,14 +11,13 @@
 </head>
 <body>
     <header>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-lg-5 shadow-sm">
             <a class="navbar-brand" href="#">سامانه پنجره واحد کیش</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse px-5" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse px-lg-5" id="navbarSupportedContent">
 
                 <ul class="navbar-nav">
 
@@ -69,26 +68,13 @@
 
             </div>
         </nav>
-
-
-
-        <nav class="mr-4 p-3">
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-airport-tab" data-toggle="tab" href="#nav-airport" role="tab" aria-controls="nav-airport" aria-selected="true">فرودگاه کیش</a>
-                <a class="nav-item nav-link" id="nav-harbor-tab" data-toggle="tab" href="#nav-harbor" role="tab" aria-controls="nav-harbor" aria-selected="false">بندرگاه کیش</a>
-            </div>
-        </nav>
-
-
-
     </header>
 
 
-
     <div class="container-fluid">
-        <div class="row m-2">
+        <div class="row">
 
-            <div class="col mb-4">
+            <div class="col-lg-3 p-lg-5">
                 <div id="accordion">
 
                     <div class="card">
@@ -189,12 +175,29 @@
                 </div>
             </div>
 
-            <main role="main" class="mx-auto col-10">
-                @RenderBody()
-            </main>
+            <div class="col my-3">
+                <div class="col">
+                    <nav class="my-3">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-airport-tab" data-toggle="tab" href="#nav-airport" role="tab" aria-controls="nav-airport" aria-selected="true">فرودگاه کیش</a>
+                            <a class="nav-item nav-link" id="nav-harbor-tab" data-toggle="tab" href="#nav-harbor" role="tab" aria-controls="nav-harbor" aria-selected="false">بندرگاه کیش</a>
+                        </div>
+                    </nav>
+                </div>
 
+                <div class="w-100 my-4"></div>
+
+                <div class="col">
+                    <main role="main" class="mx-lg-4">
+                        @RenderBody()
+                    </main>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
+
 
     <footer class="border-top footer text-muted py-3">
         <div class="container">
