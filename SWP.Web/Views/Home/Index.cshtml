@@ -5,7 +5,7 @@
 
 <div class="d-flex flex-wrap bd-highlight justify-content-center mb-3">
 
-    <div class="p-2 flex-sm-fill bd-highlight">
+    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="1">
         <div class="row p-3 m-2 bd-highlight shadow text-center">
             <div class="col my-auto">
                 <p class="h4">تعداد پرواز</p>
@@ -46,7 +46,7 @@
     </div>
 
 
-    <div class="p-2 flex-sm-fill bd-highlight">
+    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="2">
         <div class="row p-3 m-2 bd-highlight shadow text-center">
             <div class="col my-auto">
                 <p class="h4">تعداد پرواز</p>
@@ -87,7 +87,7 @@
     </div>
 
 
-    <div class="p-2 flex-sm-fill bd-highlight">
+    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="3">
         <div class="row p-3 m-2 bd-highlight shadow text-center">
             <div class="col my-auto">
                 <p class="h4">تعداد پرواز</p>
@@ -133,7 +133,7 @@
 
 <div class="d-flex flex-wrap bd-highlight justify-content-center mb-3">
 
-    <div class="p-2 flex-sm-fill bd-highlight">
+    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="4">
         <div class="row p-3 m-2 bd-highlight shadow text-center">
             <div class="col my-auto">
                 <p class="h4">تعداد پرواز</p>
@@ -174,7 +174,7 @@
     </div>
 
 
-    <div class="p-2 flex-sm-fill bd-highlight">
+    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="5">
         <div class="row p-3 m-2 bd-highlight shadow text-center">
             <div class="col my-auto">
                 <p class="h4">تعداد پرواز</p>
@@ -217,7 +217,40 @@
 </div>
 
 
+
 <div class="row my-5"></div>
+
+
+
+<div class="chart-group" id="tab-1">content 1</div>
+<div class="chart-group" id="tab-2">content 2</div>
+<div class="chart-group" id="tab-3">content 3</div>
+<div class="chart-group" id="tab-4">content 4</div>
+<div class="chart-group" id="tab-5">content 5</div>
+
+<style>
+    .chart-group-selector:hover {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+        transition: 1s ease;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(".chart-group").each(function (index) {
+        $(this).hide();
+    });
+
+    $(document).ready(function () {
+        $(".chart-group-selector").click(function () {
+            $('#tab-' + $(this).attr('id')).fadeToggle();
+
+        });
+    });
+</script>
+
 
 
 
