@@ -5,11 +5,11 @@
 
 <div class="d-flex flex-wrap bd-highlight justify-content-center mb-3">
 
-    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="1">
-        <div class="row p-3 m-2 bd-highlight shadow text-center">
-            <div class="col my-auto">
+    <div class="p-2 flex-sm-fill bd-highlight" id="1">
+        <div class="row p-3 bd-highlight text-center chart-group-selector" style="border: 0px solid rgb(255, 193, 7); opacity: 1; font-size: 14px;">
+            <div class="col p-3 my-auto shadow">
                 <p class="h4">تعداد پرواز</p>
-                <p class="h2 text-primary">53</p>
+                <p class="h2 text-primary" style="">22</p>
 
                 <div class="row">
                     <div class="col border-left border-dark">
@@ -46,11 +46,11 @@
     </div>
 
 
-    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="2">
-        <div class="row p-3 m-2 bd-highlight shadow text-center">
-            <div class="col my-auto">
+    <div class="p-2 flex-sm-fill bd-highlight" id="2">
+        <div class="row p-3 bd-highlight text-center chart-group-selector" style="border: 0px solid rgb(255, 193, 7); opacity: 1; font-size: 14px;">
+            <div class="col p-3 my-auto shadow">
                 <p class="h4">تعداد پرواز</p>
-                <p class="h2 text-primary">53</p>
+                <p class="h2 text-primary" style="">22</p>
 
                 <div class="row">
                     <div class="col border-left border-dark">
@@ -87,11 +87,11 @@
     </div>
 
 
-    <div class="p-2 flex-sm-fill bd-highlight chart-group-selector" id="3">
-        <div class="row p-3 m-2 bd-highlight shadow text-center">
-            <div class="col my-auto">
+    <div class="p-2 flex-sm-fill bd-highlight" id="3">
+        <div class="row p-3 bd-highlight text-center chart-group-selector" style="border: 0px solid rgb(255, 193, 7); opacity: 1; font-size: 14px;">
+            <div class="col p-3 my-auto shadow">
                 <p class="h4">تعداد پرواز</p>
-                <p class="h2 text-primary">53</p>
+                <p class="h2 text-primary" style="">22</p>
 
                 <div class="row">
                     <div class="col border-left border-dark">
@@ -229,24 +229,28 @@
 <div class="chart-group" id="tab-5">content 5</div>
 
 <style>
-    .chart-group-selector:hover {
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
-        transition: 1s ease;
-    }
+    /*Hover Effects*/
+    .chart-group-selector { transition: all .7s ease-in-out; }
+    .chart-group-selector:hover { transform: scale(1.1); }
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
+    // Hide all groups
     $(".chart-group").each(function (index) {
         $(this).hide();
     });
 
     $(document).ready(function () {
+
         $(".chart-group-selector").click(function () {
+            // Fade different groups
             $('#tab-' + $(this).attr('id')).fadeToggle();
 
+            // Update Animation
+            $(this).find(".shadow").first().fadeTo("slow", 0.5).css({ border: '0 solid #ffc107' }).animate({ fontSize: "1.1rem", opacity: 1, borderWidth: 9 }, 2000);
+            $(this).find("p.h2.text-primary").fadeOut().text("22").fadeIn();
+            $(this).find(".shadow").first().delay(5000).css({ border: '0 solid #ffc107' }).animate({ fontSize: "14px", borderWidth: 0 }, 1000);
         });
     });
 </script>
