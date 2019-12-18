@@ -230,8 +230,13 @@
 
 <style>
     /*Hover Effects*/
-    .chart-group-selector { transition: all .7s ease-in-out; }
-    .chart-group-selector:hover { transform: scale(1.1); }
+    .chart-group-selector {
+        transition: all .7s ease-in-out;
+    }
+
+        .chart-group-selector:hover {
+            transform: scale(1.1);
+        }
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -252,6 +257,17 @@
             $(this).find("p.h2.text-primary").fadeOut().text("22").fadeIn();
             $(this).find(".shadow").first().delay(5000).css({ border: '0 solid #ffc107' }).animate({ fontSize: "14px", borderWidth: 0 }, 1000);
         });
+
+        $("select.dates").change(function () {
+            if ($("select option:selected").val() == "4") {
+                $("input[name='customDateInputs']").each(function (index) {
+                    $(this).prop('disabled', function (i, v) { return !v; });
+                });
+            } else {
+                $("input[name='customDateInputs']").prop('disabled', true);
+            }
+        });
+
     });
 </script>
 
